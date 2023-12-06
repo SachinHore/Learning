@@ -1,18 +1,323 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Index Page</title>
+    <title>Index Page</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="John Doe">
+    <meta http-equiv="refresh" content="300">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <base href="https://www.w3schools.com/" target="_blank">
+    <!--The <base> element specifies the base URL and/or target for all relative URLs in a page-->
+
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <!-- External CSS-->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Internal CSS-->
+    <style>
+        body {
+            background-color: powderblue;
+        }
+
+        h1 {
+            color: blue;
+        }
+
+        p {
+            color: red;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
 </head>
+
 <body>
+    <h1 id="myHeader">This is a Heading</h1>
+    <p class="city main">This is a paragraph.</p>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+    <button onclick="document.location='default.asp'">HTML Tutorial</button>
 
-<a href="https://www.w3schools.com">This is a link</a>
+    <a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section" target="_blank">Visit our HTML
+        Tutorial</a>
+    <!--
+        The 'target' attribute can have one of the following values:
+        self - Default. Opens the document in the same window/tab as it was clicked
+        _blank - Opens the document in a new window or tab
+        _parent - Opens the document in the parent frame
+        _top - Opens the document in the full body of the window
+        "framename"	The response is displayed in a named iframe
+        -->
+    <br /><br />
 
-<br><br>
+    <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="HTML5 Icon" width="128" height="128">
 
-<img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
+    <img src="html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
+    <!--However, we suggest using the style attribute. It prevents styles sheets from changing the size of images:-->
 
+
+
+    <!-- Write your comments here -->
+
+    <b> - Bold text </b>
+    <strong> - Important text </strong>
+    <i> - Italic text </i>
+    <em> - Emphasized text </em>
+    <mark> - Marked text </mark>
+    <small> - Smaller text </small>
+    <del> - Deleted text </del>
+    <ins> - Inserted text </ins>
+    <sub> - Subscript text </sub>
+    <sup> - Superscript text </sup>
+
+    <!-- Inline CSS-->
+    <p style="color:red;">A red paragraph.</p>
+
+
+    <table style="width:100%;"">
+        <tr>
+            <th colspan=" 2">Name</th>
+        <th rowspan="2">Age</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+    </table>
+
+
+    <ul style="list-style-type:disc;"> <!-- :circle, :square, :none -->
+        <li>Coffee</li>
+        <li>Tea
+            <ul>
+                <li>Black tea</li>
+                <li>Green tea</li>
+            </ul>
+        </li>
+        <li>Milk</li>
+    </ul>
+
+    <ol start="50" type="1"> <!-- :"A", :"a", :"I", :"i" -->
+        <li>Coffee</li>
+        <li>Tea
+            <ol>
+                <li>Black tea</li>
+                <li>Green tea</li>
+            </ol>
+        </li>
+        <li>Milk</li>
+    </ol>
+
+    <!--<dl> tag defines the description list, the <dt> tag defines the term (name), and the <dd> tag describes each term:-->
+
+    <dl>
+        <dt>Coffee</dt>
+        <dd>- black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>- white cold drink</dd>
+    </dl>
+
+    <iframe name="iframe_a" src="demo_iframe.htm" style="height:200px;width:300px;" title="Iframe Example"></iframe>
+    <p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+
+
+
+    <!--
+        HTML Layout Elements
+        HTML has several semantic elements that define the different parts of a web page:
+
+        HTML5 Semantic Elements	
+
+        <header> - Defines a header for a document or a section
+        <nav> - Defines a set of navigation links
+        <section> - Defines a section in a document
+        <article> - Defines an independent, self-contained content
+        <aside> - Defines content aside from the content (like a sidebar)
+        <footer> - Defines a footer for a document or a section
+        <details> - Defines additional details that the user can open and close on demand
+        <summary> - Defines a heading for the <details> element
+        <figcaption>	Defines a caption for a <figure> element
+        <figure>	Specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
+        <main>	Specifies the main content of a document
+        <mark>	Defines marked/highlighted text
+
+        
+        You can read more about semantic elements in our HTML Semantics chapter.
+    -->
+
+    <figure>
+        <img src="pic_trulli.jpg" alt="Trulli" style="width:100%">
+        <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+    </figure>
+
+    <article>
+        <h2>Microsoft Edge</h2>
+        <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft Edge replaced Internet
+            Explorer.</p>
+    </article>
+
+    <details>
+        <summary>Epcot Center</summary>
+        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions,
+            award-winning fireworks and seasonal special events.</p>
+    </details>
+
+
+
+
+
+    <h2>Show Different Images Depending on Browser Width</h2>
+    <p>Resize the browser width and the image will change at 600px and 1500px.</p>
+    <picture>
+        <source srcset="img_smallflower.jpg" media="(max-width: 600px)">
+        <source srcset="img_flowers.jpg" media="(max-width: 1500px)">
+        <source srcset="flowers.jpg">
+        <img src="img_flowers.jpg" alt="Flowers" style="width:auto;">
+    </picture>
+
+
+    <code>
+        x = 5;
+        y = 6;
+        z = x + y;
+    </code>
+
+    <!--The HTML <kbd> ,<samp>,  element is used to define keyboard input.
+         The content inside is displayed in the browser's default monospace font.-->
+    <p>Save the document by pressing <kbd>Ctrl + S</kbd></p>
+
+    <p>Message from my computer:</p>
+    <p><samp>File not found.<br>Press F1 to continue</samp></p>
+
+    <!--The HTML <var> element  is used to define a variable in programming or in a mathematical expression. The content inside is typically displayed in italic.-->
+    <p>The area of a triangle is: 1/2 x <var>b</var> x <var>h</var>, where <var>b</var> is the base, and <var>h</var> is
+        the vertical height.</p>
+
+
+
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname">
+
+        <input type="radio" id="html" name="fav_language" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="fav_language" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+        <label for="javascript">JavaScript</label>
+
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+        <label for="vehicle1"> I have a bike</label><br>
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+        <label for="vehicle2"> I have a car</label><br>
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        <label for="vehicle3"> I have a boat</label>
+
+        <input type="submit" value="Submit">
+
+        <input type="button" value="btn">
+    </form>
+
+    <form action="/action_page.php" target="_blank" autocomplete="on" novalidate method="get" name="myForm"
+        accept-charset="utf-8" rel="" enctype="multipart/form-data">
+        <!--
+            method="post" 
+
+            enctype="multipart/form-data"
+            Note: The enctype attribute can be used only if method="post". 
+            application/x-www-form-urlencoded -	Default. All characters are encoded before sent 
+                                                (spaces are converted to "+" symbols, and special characters are converted to ASCII HEX values)
+            multipart/form-data	-               This value is necessary if the user will upload a file through the form
+            text/plain -	                    Sends data without any encoding at all. Not recommended
+            
+            "autocomplete" is on, the browser automatically complete values based on values that the user has entered before.
+
+            rel=""
+            external	Specifies that the referenced document is not a part of the current site
+            help	    Links to a help document
+            license	    Links to copyright information for the document
+            next	    The next document in a selection
+            nofollow	Links to an unendorsed document, like a paid link.
+                        ("nofollow" is used by Google, to specify that the Google search spider should not follow that link)
+            noopener	 
+            noreferrer	Specifies that the browser should not send a HTTP referrer header if the user follows the hyperlink
+            opener	 
+            prev	    The previous document in a selection
+            search	    Links to a search tool for the document
+        -->
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        document.getElementById("demo").innerHTML = "Hello JavaScript!";
+    </script>
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
 </body>
+
 </html>
