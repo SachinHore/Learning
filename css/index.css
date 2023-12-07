@@ -1,0 +1,65 @@
+/*  Selectors */
+p {
+    background-color: #fff;
+}
+
+.class {
+    background-color: #fff;
+}
+
+#id {
+    background-color: #fff;
+}
+
+
+.colors {
+    color: rgb(0, 0, 255);
+    color: rgba(255, 99, 71, 0.6);
+    color: #ff0000;
+    color: #b58;
+    color: hsl(0, 100%, 50%);
+}
+
+.background {
+    background-color: #fff;
+    background-image: url("img_tree.png");
+    background-repeat: no-repeat;
+    /* repeat, repeat-x, repeat-y */
+    background-position: right top;
+    /*left top, left center, left bottom, right top, right center, right bottom, center top, center center, center bottom, x% y%, initial, inherit */
+    background-attachment: fixed;
+    /* scroll */
+    background: #ffffff url("img_tree.png") no-repeat right top;
+    background-size: 300px 100px;
+    /* auto */
+
+}
+
+.border {
+    border-style: solid;/*dotted, dashed, solid, double, groove, ridge, inset, outset, none, hidden */
+    border-style: solid dotted; /*(top bottom)(left right)*/
+    border-style: solid dotted double; /*(top )(left right)(bottom)*/
+    border-style: dotted solid double dashed; /*top right bottom left*/
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: solid;
+
+    border-width: 5px 20px;
+    /* 5px top and bottom, 20px on the sides */
+    border-width: 25px 10px 4px 35px;
+    /* 25px top, 10px right, 4px bottom and 35px left */
+
+    border-color: red;
+    border-color: red green blue yellow;
+    /* red top, green right, blue bottom and yellow left */
+
+    border: 5px solid red;
+    border-top: 6px solid red;/*right, bottom, left*/
+
+    border-radius: 5px;
+
+    
+
+
+}
