@@ -35,11 +35,16 @@ p {
 
 }
 
-.border {
-    border-style: solid;/*dotted, dashed, solid, double, groove, ridge, inset, outset, none, hidden */
-    border-style: solid dotted; /*(top bottom)(left right)*/
-    border-style: solid dotted double; /*(top )(left right)(bottom)*/
-    border-style: dotted solid double dashed; /*top right bottom left*/
+.border,
+.outline {
+    border-style: solid;
+    /*dotted, dashed, solid, double, groove, ridge, inset, outset, none, hidden */
+    border-style: solid dotted;
+    /*(top bottom)(left right)*/
+    border-style: solid dotted double;
+    /*(top )(left right)(bottom)*/
+    border-style: dotted solid double dashed;
+    /*top right bottom left*/
     border-top-style: dotted;
     border-right-style: solid;
     border-bottom-style: dotted;
@@ -55,11 +60,19 @@ p {
     /* red top, green right, blue bottom and yellow left */
 
     border: 5px solid red;
-    border-top: 6px solid red;/*right, bottom, left*/
+    border-top: 6px solid red;
+    /*right, bottom, left*/
 
     border-radius: 5px;
 
+    outline: 1px solid red;
+    outline-offset: 15px;
+
+
+}
+
+.text{
+    color: #b58;
+
     
-
-
 }
