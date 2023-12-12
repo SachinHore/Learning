@@ -165,20 +165,20 @@ while (condition);
 
 /* A JavaScript "Set" is a collection of unique values.
 Each value can only occur once in a Set. */
-const letters = new Set(["a","b","c"]);
+const letters = new Set(["a", "b", "c"]);
 letters.add("a");//do not add
 letters.add("d");//add
 
 /*A "Map" holds key-value pairs where the keys can be any datatype.
 A Map remembers the original insertion order of the keys. */
-const fruits2 = new Map([["apples", 500],["bananas", 300]]);
+const fruits2 = new Map([["apples", 500], ["bananas", 300]]);
 fruits2.set("oranges", 200);
 fruits2.get("apples");    // Returns 500
 
 typeof "John"                 // Returns "string"
 typeof 3.14                   // Returns "number"
 
-(cars instanceof Array); //true
+  (cars instanceof Array); //true
 
 String(123);  //number to string
 (123).toString(); //number to string
@@ -224,7 +224,7 @@ const myCar1 = new Car("Ford", 2014);
 */
 //text string form of JSON
 const jsObj = JSON.parse(text);// to convert the string => JavaScript object
-
+const jsStr = JSON.stringify("");// to convert JSON => string
 
 /*
 <script>
@@ -238,4 +238,155 @@ window.onload = function() {
 
 
 /* JS Objects */
+
+new Object(); //create new object
+Object.create();//create new object
+
+const obj = {
+  counter: 0,
+  set setCounter(val) {
+    this.counter = val;
+  },
+  get getCounter() {
+    return this.counter;
+  }
+};
+Object.defineProperty(obj, "reset", {
+  get: function () { this.counter = 0; }
+});
+Object.defineProperty(obj, "add", {
+  set: function (value) { this.counter += value; }
+});
+obj.getCounter;
+obj.setCounter(4);
+obj.reset;
+obj.add = 5;
+
+function Person(first, last, age, eyecolor) {  //constructor
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+}
+const myFather = new Person("John", "Doe", 50, "blue");
+Person.nationality = "English";//not allowed
+Person.prototype.nationality = "English";//allowed
+
+/** JS Functions */
+
+function myFunction(a, b) {
+  return a * b;
+}
+const x1 = function (a, b) { return a * b };
+const x2 = (a, b) => a * b;
+const x3 = (x, y) => { return x * y };
+function sum(...args) { };
+
+/* call() , Apply(), Bind() */
+
+
+
+
+
+
+/* Classes */
+
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  present() {
+    return 'I have a ' + this.carname;
+  }
+  get getCarname() {
+    return this.carname;
+  }
+  set setCarname(x) {
+    this.carname = x;
+  }
+  static hello() {
+    return "Hello!!";
+  }
+}
+
+let myCar2 = new Car("Tata");
+
+class Model extends Car {
+  constructor(brand, mod) {
+    super(brand);
+    this.model = mod;
+  }
+  show() {
+    return this.present() + ', it is a ' + this.model;
+  }
+}
+
+let myCar3 = new Model("Ford", "Mustang");
+Car.hello();
+
+/* Async */
+
+//Callback
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+function myCalculator(num1, num2, myCallback) {
+  let sum = num1 + num2;
+  myCallback(sum);
+}
+myCalculator(5, 5, myDisplayer);
+
+//Asynchronous
+setTimeout(function () { }, 3000);//after 3000ms function called
+setInterval(function () { }, 1000);//after every 1000ms function called continuously
+
+//Promises
+
+let myPromise = new Promise(function(myResolve, myReject) {
+  let req = new XMLHttpRequest();
+  req.open('GET', "mycar.htm");
+  // The producing code (this may take some time)
+  req.onload = function() {
+    if (req.status == 200) {
+      myResolve(req.response);
+    } else {
+      myReject("File not Found");
+    }
+  };
+  req.send();
+});
+// "Consuming Code" (Must wait for a fulfilled Promise)
+myPromise.then(
+  function(value) {myDisplayer(value);/* code if successful */},
+  function(error) {myDisplayer(error);/* code if some error */ }
+);
+
+
+//Async await
+//The keyword async before a function makes the function return a promise
+//The await keyword can only be used inside an async function.
+//The await keyword can only be used inside an async function.
+//The await keyword makes the function pause the execution and wait for a resolved promise before it continues:
+
+async function getFile() {
+  let myPromise = new Promise(function(resolve) {
+    let req = new XMLHttpRequest();
+    req.open('GET', "mycar.html");
+    req.onload = function() {
+      if (req.status == 200) {
+        resolve(req.response);
+      } else {
+        resolve("File not Found");
+      }
+    };
+    req.send();
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+getFile();
+
+
+
+
+
 
