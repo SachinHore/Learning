@@ -342,11 +342,11 @@ setInterval(function () { }, 1000);//after every 1000ms function called continuo
 
 //Promises
 
-let myPromise = new Promise(function(myResolve, myReject) {
+let myPromise = new Promise(function (myResolve, myReject) {
   let req = new XMLHttpRequest();
   req.open('GET', "mycar.htm");
   // The producing code (this may take some time)
-  req.onload = function() {
+  req.onload = function () {
     if (req.status == 200) {
       myResolve(req.response);
     } else {
@@ -357,8 +357,8 @@ let myPromise = new Promise(function(myResolve, myReject) {
 });
 // "Consuming Code" (Must wait for a fulfilled Promise)
 myPromise.then(
-  function(value) {myDisplayer(value);/* code if successful */},
-  function(error) {myDisplayer(error);/* code if some error */ }
+  function (value) { myDisplayer(value);/* code if successful */ },
+  function (error) { myDisplayer(error);/* code if some error */ }
 );
 
 
@@ -369,10 +369,10 @@ myPromise.then(
 //The await keyword makes the function pause the execution and wait for a resolved promise before it continues:
 
 async function getFile() {
-  let myPromise = new Promise(function(resolve) {
+  let myPromise = new Promise(function (resolve) {
     let req = new XMLHttpRequest();
     req.open('GET', "mycar.html");
-    req.onload = function() {
+    req.onload = function () {
       if (req.status == 200) {
         resolve(req.response);
       } else {
@@ -388,5 +388,179 @@ getFile();
 
 
 
+/** JS HTML DOM */
+//The getElementsByClassName() and getElementsByTagName() methods 
+//return a live HTMLCollection.
+const myTagCollection = document.getElementsByTagName("tagname");
+myTagCollection[0];
+myTagCollection.length;
+
+const myclassCollection = document.getElementsByClassName("classname");
+myclassCollection[0];
+myclassCollection.length;
+
+let element = document.getElementById("id");
+element.innerHTML = "";
+//element."attribute" = "value";
+//element.style."property" = "new style";
+//element.setAttribute("attribute", "value");
+
+const myNodeList = document.querySelectorAll("p"); //The querySelectorAll() method returns a static NodeList
+myNodeList[0];
+myNodeList.length;
+//<p class="intro">Hello Woerld!.</p>
+//<p class="intro">This example demonstrates the</p>
+document.querySelectorAll("p.intro")[1];  //<p class="intro">This example demonstrates the</p>
 
 
+const x11 = document.forms["frm1"];
+x.elements[0].value;
+/*document.anchors
+document.body
+document.documentElement
+document.embeds
+let x = document.forms["myForm"]["fname"].value;
+document.head
+document.images
+document.links
+document.scripts
+document.title 
+document.write(text)	//Write into the HTML output stream
+*/
+
+document.getElementById("id").onclick = function(){code}	//Adding event handler code to an onclick event
+
+//<button id="myBtn">Try it</button>
+document.getElementById("myBtn").addEventListener("click", function () {
+  alert("Hello World!");
+});
+document.getElementById("myBtn").removeEventListener("click", function () {
+  alert("Hello World!");
+});
+window.addEventListener("resize", function () {
+  document.getElementById("demo").innerHTML = "sometext";
+});
+
+//navigation
+//<h1 id="id01">My First Page</h1>
+//<p id="id02"></p>
+let eleid01 = document.getElementById("id02");
+let eleid02 = document.getElementById("id01");
+eleid02.innerHTML = eleid01.innerHTML;
+eleid02.innerHTML = eleid01.childNodes[0].nodeValue;
+eleid02.innerHTML = eleid01.firstChild.nodeValue;
+eleid02.innerHTML = document.body.innerHTML;  //The body of the document
+eleid02.innerHTML = document.documentElement.innerHTML;  //The full document
+eleid02.innerHTML = eleid01.nodeName;  //h1
+eleid02.innerHTML = eleid01.nodeType;  //1  //nodeType property is read only.
+
+/*<div id="div1">
+  <p id="p1">This is a paragraph.</p>
+  <p id="p2">This is another paragraph.</p>
+</div>*/
+const newPara = document.createElement("p");
+//newPara."attribute" = "value";
+//newPara.style."property" = "new style";
+//newPara.setAttribute("attribute", "value");
+const newNode = document.createTextNode("This is a new paragraph.");
+newPara.appendChild(newNode);
+const parentEelement = document.getElementById("div1");
+const childElement1 = document.getElementById("p1");
+parentEelement.insertBefore(para, child);   //insert para inside div1 and befor p1
+childElement1.remove();
+const childElement2 = document.getElementById("p2");
+parentEelement.removeChild(childElement2);
+parentEelement.replaceChild(childElement2, childElement1);// childElement1=childElement2
+parentEelement.childNodes; //The childNodes property returns a live NodeList.
+
+
+/** JS Browser BOM */
+//Window
+window.innerHeight;  // the inner height of the browser window (in pixels)
+window.innerWidth;   // the inner width of the browser window (in pixels)
+window.open();       // open a new window
+window.close();      // close the current window
+window.moveTo();     // move the current window
+window.resizeTo();   // resize the current window
+
+//Screen  //window.screen object can be written without the window prefix
+screen.width;
+screen.height;
+screen.availWidth;
+screen.availHeight;
+screen.colorDepth;
+screen.pixelDepth;
+
+//Location //window.location object can be written without the window prefix.
+window.location.href;     //returns the href (URL) of the current page
+window.location.hostname; //returns the domain name of the web host
+window.location.pathname; //returns the path and filename of the current page
+window.location.protocol; //returns the web protocol used (http: or https:)
+window.location.assign("https://www.w3schools.com"); //loads a new document
+window.location.port;     //returns the number of the internet host port (of the current page)
+
+//History  //window.history object can be written without the window prefix.
+history.back();     //same as clicking back in the browser
+history.forward();  //same as clicking forward in the browser
+
+//window.navigator object can be written without the window prefix.
+navigator.cookieEnabled  //returns true if cookies are enabled, otherwise false:
+navigator.language;//returns the browser's language:
+navigator.onLine;//returns true if the browser is online:
+
+navigator.appVersion;//returns version information about the browser
+navigator.userAgent;//returns the user-agent header sent by the browser to the server //should not use
+navigator.platform;// returns the browser platform (operating system):
+navigator.javaEnabled();//returns true if Java is enabled:
+navigator.appName;       //appName property returns the application name of the browser:
+navigator.appCodeName;
+navigator.product;
+
+//Popup Alert
+window.alert("sometext"); //alert("sometext");
+window.confirm("sometext"); //return true =>if press ok  or false =>if press cancle 
+window.prompt("Please enter your name", "Harry Potter"); //click ok =>return input value or cancle=>null
+
+//Timing
+let myVar1 = window.setTimeout(function(){}, milliseconds);
+window.clearTimeout(myVar1);
+let myVar2 = window.setInterval(function(){}, milliseconds);
+window.clearTimeout(myVar2);
+
+//Cookies
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
+}
+
+checkCookie();
