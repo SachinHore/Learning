@@ -564,3 +564,83 @@ function checkCookie() {
 }
 
 checkCookie();
+
+
+/** Web APIs */
+
+checkValidity()	//Returns true if an input element contains valid data.
+setCustomValidity()	//Sets the validationMessage property of an input element.
+
+window.history.back();
+window.history.forward();
+window.history.go(-2);
+window.history.length;
+
+window.localStorage;	//Allows to save key/value pairs in a web browser. Stores the data with no expiration date
+window.sessionStorage;	//Allows to save key/value pairs in a web browser. Stores the data for one session
+/*window.localStorage." "    or   window.sessionStorage." "
+key(n)	//Returns the name of the nth key in the storage
+length	//Returns the number of data items stored in the Storage object
+getItem(keyname)	//Returns the value of the specified key name
+setItem(keyname, value)	//Adds a key to the storage, or updates a key value (if it already exists)
+removeItem(keyname)	//Removes that key from the storage
+clear()	//Empty all key out of the storage
+*/
+
+//Worker Api
+/* file = demo_workers.js
+let i = 0;
+function timedCount() {
+  i ++;
+  postMessage(i);
+  setTimeout("timedCount()",500);
+}
+timedCount();
+*/
+/*<p>Count numbers: <output id="result"></output></p>
+<button onclick="startWorker()">Start Worker</button>
+<button onclick="stopWorker()">Stop Worker</button>*/
+let w;
+function startWorker() {
+  if (typeof(w) == "undefined") {
+    w = new Worker("demo_workers.js");
+  }
+  w.onmessage = function(event) {
+    document.getElementById("result").innerHTML = event.data;
+  };
+}
+function stopWorker() {
+  w.terminate();
+  w = undefined;
+}
+
+//Fetch Api
+
+let file = "fetch_info.txt"
+fetch (file)
+.then(x => x.text())
+.then(y => document.getElementById("demo").innerHTML = y);
+            //or
+getText("fetch_info.txt");
+async function getText(file) {
+  let myObject = await fetch(file);
+  let myText = await myObject.text();
+  document.getElementById("demo").innerHTML = myText;
+}
+
+
+/* AJAX */
+
+new XMLHttpRequest()	//Creates a new XMLHttpRequest object
+abort()	//Cancels the current request
+getAllResponseHeaders()	//Returns header information
+getResponseHeader()	//Returns specific header information
+open(method, url, async, user, psw)	//Specifies the request
+/*method: the request type GET or POST
+url: the file location
+async: true (asynchronous) or false (synchronous)
+user: optional user name
+psw: optional password*/
+send()	//Sends the request to the server Used for GET requests
+send(string)	//Sends the request to the server.Used for POST requests
+setRequestHeader()	//Adds a label/value pair to the header to be sent
