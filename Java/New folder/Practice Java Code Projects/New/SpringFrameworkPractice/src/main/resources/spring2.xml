@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+                             http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+       >
+
+    <bean id="triangle1" class="com.springFramework.Triangle2" />
+    <bean class="com.springFramework.DisplayNameBeanPostProcessor"></bean>
+
+    <bean class="com.springFramework.MyBeanFactoryPostProcessor"></bean>
+
+    <bean id="triangle2" class="com.springFramework.Triangle2">
+        <property name="type" value="${triangle.type}"></property>
+        <property name="height" value="${triangle.height}"></property>
+    </bean>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="triangleconfig.properties"></property>
+    </bean>
+
+</beans>

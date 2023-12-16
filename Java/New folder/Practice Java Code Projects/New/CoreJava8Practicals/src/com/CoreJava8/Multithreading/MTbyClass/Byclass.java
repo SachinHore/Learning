@@ -1,0 +1,38 @@
+package com.CoreJava8.Multithreading.MTbyClass;
+class Hi extends Thread{
+    public void run(){
+
+        for(int i=1;i<=5;i++)
+        {
+            System.out.println("Hi"+i);
+
+            try{Thread.sleep(1000);}catch(Exception e){}
+        }
+    }
+}
+
+class Hello extends Thread{
+    public void run(){
+
+        for(int i=1;i<=5;i++)
+        {
+            System.out.println("Hello"+i);
+
+            try{Thread.sleep(1000);}catch(Exception e){}
+        }
+    }
+}
+
+public class Byclass {
+
+    public static void main(String[] args) {
+        Hi obj1 = new Hi();
+        Hello obj2 = new Hello();
+
+        obj1.start();
+        try{Thread.sleep(20);}catch(InterruptedException e){}
+        obj2.start();
+
+
+    }
+}

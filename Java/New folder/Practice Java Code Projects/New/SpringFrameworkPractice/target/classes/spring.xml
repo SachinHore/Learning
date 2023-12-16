@@ -1,0 +1,65 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+                             http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="triangle1" class="com.springFramework.Triangle"/>
+
+    <bean id="triangle2" class="com.springFramework.Triangle">
+        <constructor-arg type="java.lang.String" value="Equilateral"></constructor-arg>
+    </bean>
+
+    <bean id="triangle3" class="com.springFramework.Triangle">
+        <constructor-arg type="int" value="20"></constructor-arg>
+    </bean>
+
+    <bean id="triangle4" class="com.springFramework.Triangle">
+        <constructor-arg type="int" value="20"></constructor-arg>
+        <constructor-arg type="java.lang.String" value="Equilateral"></constructor-arg>
+    </bean>
+
+    <bean id="triangle5" class="com.springFramework.Triangle">
+        <constructor-arg index="1" value="20"></constructor-arg>
+        <constructor-arg index="0" value="Equilateral"></constructor-arg>
+    </bean>
+
+    <bean id="triangle6" class="com.springFramework.Triangle">
+        <constructor-arg value="Equilateral"></constructor-arg>
+        <constructor-arg value="20"></constructor-arg>
+    </bean>
+
+    <bean id="triangle7" class="com.springFramework.Triangle">
+        <property name="type" value="Equilateral"></property>
+        <property name="height" value="20"></property>
+    </bean>
+
+
+
+    <bean id="shape1" class="com.springFramework.Shape">
+        <property name="triangle" ref="triangle7"></property>
+    </bean>
+
+    <bean id="shape2" class="com.springFramework.Shape"/>
+
+    <bean id="shape3" class="com.springFramework.Shape">
+        <constructor-arg ref="triangle3"></constructor-arg>
+    </bean>
+
+
+    <bean id="triangle8" class="com.springFramework.Triangle" scope="singleton"/>
+
+    <bean id="triangle10" class="com.springFramework.Triangle" scope="prototype"/>
+
+    <bean class="com.springFramework.MyBeanFactoryPP"/>
+
+    <bean id="triangle12" class="com.springFramework.Triangle">
+        <property name="type" value="${triangle.type}"></property>
+        <property name="height" value="${triangle.height}"></property>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="triangleconfig.properties"></property>
+    </bean>
+</beans>

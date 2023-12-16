@@ -1,0 +1,50 @@
+
+srmdev: passwd 1redSeal1
+
+to check current print working directory ->   pwd
+
+list content of current working directory ->  ls
+
+to change directory -> cd
+
+to change previous directory -> cd ..
+
+change to root directory -> cd
+
+To copy "Test" file and paste in same directory as name "Testcopy"   -> cp Test Testcopy
+
+touch test.txt  //to create test.txt file
+
+To remove Test file ->  rm Test
+
+Making new  folder -> mkdir TestFolder
+
+Delete empty folder -> rmdir TestFolder
+
+To know the detail about any command -> man cp  ,  man ls   etc
+
+
+
+git config --list
+
+clear screen ->  clear
+
+To gradle build ->   gradle clean build -x test -x :pluginImpls:cpmi:compileCPMIdaemon
+
+To clean DB ->  gradle schema
+
+gradle clean
+
+gradle clean build -x test -x :pluginImpls:cpmi:compileCPMIdaemon
+
+gradle schemaexport
+
+gradle schema
+cd ..
+
+
+PSAdmin 
+root: passwd - postgres
+redseal: passwd - 1redSeal1
+
+PgAdmin Pass:  postgress

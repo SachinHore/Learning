@@ -1,0 +1,97 @@
+[srmdev@localhost ~]$ cd Redseal/main
+bash: cd: Redseal/main: No such file or directory
+[srmdev@localhost ~]$ cd REDSEAL/main/
+[srmdev@localhost main]$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    pluginImpls/CPMI/CPMIDaemon/cpmidaemon
+	deleted:    pluginImpls/CPMI/linux-bin/cpmidaemon
+	modified:   pluginImpls/pcap/resources/macaddress.io-db.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.com.rsa.cryptoj.fips140.katstatus.properties
+	webclient/package-lock.json
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[srmdev@localhost main]$ git clean -fd
+Removing .com.rsa.cryptoj.fips140.katstatus.properties
+Removing webclient/package-lock.json
+[srmdev@localhost main]$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    pluginImpls/CPMI/CPMIDaemon/cpmidaemon
+	deleted:    pluginImpls/CPMI/linux-bin/cpmidaemon
+	modified:   pluginImpls/pcap/resources/macaddress.io-db.json
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[srmdev@localhost main]$ git checkout .
+Updated 3 paths from the index
+[srmdev@localhost main]$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+[srmdev@localhost main]$ git branch 
+* master
+  rs/rkv/device_count_issue
+[srmdev@localhost main]$ git checkout -b rs/shore/test_branch
+Switched to a new branch 'rs/shore/test_branch'
+[srmdev@localhost main]$ git status
+On branch rs/shore/test_branch
+nothing to commit, working tree clean
+[srmdev@localhost main]$ git log
+commit 592e102ce08c2c69c3bf22e2511e4b3bd54bf92f (HEAD -> rs/shore/test_branch, origin/master, origin/HEAD, master)
+Merge: 126732c3a11 fe95ba7a49f
+Author: Prashant Kapoor <pkapoor@redseal.net>
+Date:   Tue Jun 29 20:16:34 2021 +0530
+
+    Merge pull request #21697 from redseal/rs/pkapoor/CL-32337
+    
+    Threatmap performance improvements for CL-32337
+
+commit fe95ba7a49fe0f14889080d198381efa5a44ef54
+Author: Prashant Kapoor <pkapoor@redseal.net>
+Date:   Mon Jun 28 18:50:28 2021 +0530
+
+    Threatmap performance : RiskCalcPostProcessor : CL-32337
+
+commit 126732c3a113bb32d7bce589ccb248b34e2939be
+Merge: c05184ab42e a1d247f6599
+Author: Mike Lloyd <drmike@redsealnetworks.com>
+Date:   Tue Jun 29 05:56:44 2021 -0700
+
+    Merge pull request #21707 from redseal/rs/bs/sfrcache_separate_db_layer
+    
+    Separating EHCache and DBSfrResultCache for SFRCache
+
+commit c05184ab42ecf072c13d57362a20685f4bfff2fa
+Merge: cf665279e8e 04f0bdc8941
+Author: Shivani Bhat <sbhat@redseal.net>
+Date:   Tue Jun 29 18:09:36 2021 +0530
+
+    Merge pull request #21715 from redseal/rs/sbhat/copyright_yr_issue
+    
+    Changed the copyright dates for CTP and Classic
+
+commit cf665279e8edb5e33cd70c1a2d8e1c7c3cf18930
+Merge: 2f083a4983e e2e6c5d7d7b
+Author: Swati Kadam <skadam@redseal.net>
+Date:   Tue Jun 29 11:53:48 2021 +0530
+
+    Merge pull request #21676 from redseal/rs/swing_UI_duplicate_suppressions
+    
+    Duplicate failure instances in create suppression tab
+
+commit a1d247f6599d74384a7fa48813cff616d7df2b9c
+Author: bjoshi <bjoshi@redseal.net>
+[srmdev@localhost main]$ 
+[srmdev@localhost main]$ 

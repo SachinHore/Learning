@@ -1,0 +1,3 @@
+/* Difference between JDK, JRE, and JVM*/
+JDK = JRE + Development Tools.
+JRE = JVM + Library Classes.

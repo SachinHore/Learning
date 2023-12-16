@@ -1,0 +1,60 @@
+cd Redseal/main 
+
+
+git --version
+
+git config --global user.name "..."
+git config --global user.email "..."
+
+config --global --edit   //we can edit username and password
+:wq  //for exit from edit
+
+mkdir new_folder_name   // new folder create  
+
+cd new_folder_name/
+
+To gradle build ->   gradle clean build -x test -x :pluginImpls:cpmi:compileCPMIdaemon
+
+To clean DB ->   gradle schema
+
+gradle clean
+
+git init
+
+ls   //used to list files or directories in Linux
+
+
+git status
+
+git add Sum.java   //add sum.java file in staging area
+
+git add .      //add all files in staging area
+
+git restore --staged <file>...   //to unstage the file
+ 
+git status
+
+git commit -m "message of commit"   //commits all files from stagging area to local repo
+
+git branch  //lists all the local branches in the current repository
+
+git branch [branch name]  //command creates a new branch.
+
+git branch -d [branch name]  //command deletes the feature branch
+
+git checkout [branch name]  //switch from one branch to another
+
+git checkout -b [branch name]  //create new branch and switches to it
+
+git merge [branch name]  //command merges the specified branch’s history into the current branch
+
+git remote add [variable name] [Remote Server Link]  //This command is used to connect your local repository to the remote server.
+
+git remote 
+git push [variable name] [branch]  //command sends the branch commits to your remote repository
+
+git push –all [variable name]   //command pushes all branches to your remote repository
+
+git push [variable name] :[branch name]  //command deletes a branch on your remote repository
+
+git pull [Repository Link]
